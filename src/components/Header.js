@@ -1,17 +1,14 @@
-import React from 'react'
-import Search from './Search'
-import Alert from './Alert'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  return (
+    <header className="header">
+      <Link className="logo" to="/">
+        help others
+      </Link>
+    </header>
+  );
+};
 
-
-    return (
-        <header className="header">
-            <div className="logo">help others</div>
-            <Search />
-            <Alert />
-        </header>
-    )
-}
-
-export default Header
+export default Header;

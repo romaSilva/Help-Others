@@ -1,15 +1,13 @@
-import React, { useContext } from 'react'
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
-import Header from './components/Header'
-import Splash from './components/Splash'
-import Results from './components/Results'
-import GlobalState from './contexts/GlobalState'
-import './App.css'
+import React from "react";
+import Header from "./components/Header";
+import Splash from "./components/Splash";
+import SearchPage from "./components/SearchPage";
 
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import GlobalState from "./contexts/GlobalState";
+import "./App.css";
 
 function App() {
-
   return (
     <Router>
       <GlobalState>
@@ -18,15 +16,13 @@ function App() {
             <Header />
             <Switch>
               <Route exact path="/" component={Splash} />
-              <Route exact path="/results" component={Results}/>
+              <Route exact path="/search" component={SearchPage} />
             </Switch>
           </div>
         </div>
       </GlobalState>
     </Router>
-      
-    
   );
 }
 
-export default App
+export default App;
