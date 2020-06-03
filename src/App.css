@@ -202,6 +202,11 @@ html {
   cursor: pointer;
 }
 
+.icon-red {
+  margin-right: 10px;
+  color: rgb(255, 0, 0);
+}
+
 .grid {
   margin-top: 50px;
 
@@ -212,7 +217,7 @@ html {
 }
 
 .spinner-container {
-  height: 50vh;
+  height: 70vh;
 
   display: flex;
   justify-content: center;

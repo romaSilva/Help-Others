@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
 import { RiSearch2Line } from "react-icons/ri";
+import { FiAlertCircle } from "react-icons/fi";
 import GlobalContext from "../contexts/globalContext";
 
 const Search = () => {
-  const { handleChange, input, handleSubmit } = useContext(GlobalContext);
+  const { handleChange, input, handleSubmit, alert } = useContext(
+    GlobalContext
+  );
 
   return (
     <form className="form" onSubmit={handleSubmit}>
@@ -15,7 +18,11 @@ const Search = () => {
           value={input}
           onChange={handleChange}
         />
-        <RiSearch2Line onClick={handleSubmit} className="icon" />
+        {alert ? (
+          <FiAlertCircle className="icon-red" />
+        ) : (
+          <RiSearch2Line onClick={handleSubmit} className="icon" />
+        )}
       </div>
     </form>
   );

@@ -22,6 +22,13 @@ export default (state, action) => {
         loading: false,
         results: action.payload,
       };
+    case "SET_ALERT":
+      return {
+        ...state,
+        input: "",
+        loading: false,
+        alert: action.payload,
+      };
     default:
       return state;
   }

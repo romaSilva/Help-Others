@@ -61,11 +61,25 @@ const GlobalState = (props) => {
           payload: resArr,
         });
       } else {
-        console.log("alert");
+        setAlert();
       }
     } else {
-      console.log("alert");
+      setAlert();
     }
+  };
+
+  const setAlert = () => {
+    dispatch({
+      type: "SET_ALERT",
+      payload: true,
+    });
+
+    setTimeout(() => {
+      dispatch({
+        type: "SET_ALERT",
+        payload: false,
+      });
+    }, 2000);
   };
 
   return (
