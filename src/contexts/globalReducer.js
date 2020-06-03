@@ -29,6 +29,11 @@ export default (state, action) => {
         loading: false,
         alert: action.payload,
       };
+    case "SET_SELECTED":
+      return {
+        ...state,
+        selected: action.payload,
+      };
     default:
       return state;
   }

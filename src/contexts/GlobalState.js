@@ -14,6 +14,7 @@ const GlobalState = (props) => {
     loading: false,
     results: [],
     alert: false,
+    selected: {},
   };
 
   const [state, dispatch] = useReducer(Reducer, initialState);
@@ -68,6 +69,7 @@ const GlobalState = (props) => {
     }
   };
 
+  //sets and removes the alert
   const setAlert = () => {
     dispatch({
       type: "SET_ALERT",
@@ -82,6 +84,19 @@ const GlobalState = (props) => {
     }, 2000);
   };
 
+  //sets selected based on what was clicked on ProjectCard
+  const getSelected = (id) => {
+    let foundProject = state.featured.find((project) => project.id === id);
+    if (!foundProject) {
+      foundProject = state.results.find((project) => project.id === id);
+    }
+    console.log(foundProject);
+    dispatch({
+      type: "SET_SELECTED",
+      payload: foundProject,
+    });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -90,9 +105,11 @@ const GlobalState = (props) => {
         loading: state.loading,
         results: state.results,
         alert: state.alert,
+        selected: state.selected,
         getFeatured,
         handleChange,
         handleSubmit,
+        getSelected,
         publicKey,
       }}
     >

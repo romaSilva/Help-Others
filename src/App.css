@@ -100,6 +100,7 @@ html {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
   transition: all 0.1s linear;
   margin: 20px 5px;
+  text-decoration: none;
 
   display: flex;
   flex-direction: column;
@@ -222,6 +223,61 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.project {
+  font-family: "Roboto", sans-serif;
+  margin: 0 30px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.project-header {
+  margin-top: 20px;
+
+  display: flex;
+  align-items: center;
+}
+
+.project-title {
+  font-size: 25px;
+  color: indigo;
+}
+
+.project-icon {
+  flex-grow: 1;
+  text-align: end;
+  font-size: 25px;
+}
+
+.project-country {
+  text-align: end;
+  text-transform: uppercase;
+  margin-top: 15px;
+  color: indigo;
+}
+
+.project-body {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px 35px 0 0;
+}
+
+.project-img {
+  max-width: 300px;
+  height: auto;
+  margin-right: 40px;
+  transform: translate(0, -20px);
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-activities {
+  max-width: 600px;
 }
 
 /* **************************************************************************************** */
